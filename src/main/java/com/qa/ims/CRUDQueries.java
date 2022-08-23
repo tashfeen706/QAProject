@@ -25,8 +25,22 @@ public class CRUDQueries {
 		
 	}
 	
-	public void create() {
+			
+	
+	public void create(String bookName,String author, String genre) {
 		
+		//String bookName ="The Hobbit";
+		//String author = "JR Tolkien";
+		//String genre ="Magic";
+				
+		String createStmt = "INSERT INTO books(Book_Name,Author,Genre)VALUES('"+bookName+"','"+author+"','"+genre+"');";
+		try {
+			stmt.executeUpdate(createStmt);
+			System.out.println("Create statement executed");
+		}catch(SQLException e) {
+			System.out.println("Bad query");
+			e.printStackTrace();
+		}
 	}
 	
 	
